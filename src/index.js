@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Preview from './preview/Preview';
+import Filter from './filter/filter';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Preview />
+    <Filter />
   </React.StrictMode>,
   document.getElementById('root')
 );

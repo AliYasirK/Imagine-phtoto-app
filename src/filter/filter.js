@@ -3,12 +3,21 @@ import './filter.css';
 import React, { Component } from 'react';
 //import { Stage, Layer, Rect, Text } from 'react-konva';
 //import Konva from 'konva';
+import axios from 'axios'
 
-class Filter extends Component {
-    constructor(props) {
-        super(props);
+class Filter extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      file: null
     }
-
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange(event) {
+    this.setState({
+      file: URL.createObjectURL(event.target.files[0])
+    })
+  }
 
 
     render() {
@@ -18,15 +27,13 @@ class Filter extends Component {
                     <img src="./images/logo.jpeg" alt="logo"/>
                 </div>
                     
-                <div className="filter-image filter-image-container">
-                    <img src="" alt=""/>
-                </div>
 
                 <div className="editor-container">
-                    
-                    <div className="image">   
-                        <input type="file" id="load" />
-                    </div>
+
+                <div>
+                    <input type="file" onChange={this.handleChange}/>
+                    <img src={this.state.file}/>
+                 </div>
 
 
                     <div clasName="filters">
@@ -35,15 +42,15 @@ class Filter extends Component {
                         <button id="girl-filter"/>
                     </div>
 
-                    <div>
-                        <label for="brightness">Brightness</label>
-                        <input id="brightness" name="brightness" type="range" min="-100" max="100" value="0"/>
-                    </div>
+                    <div id="controls">contrast:<input id="contrast" type="range" min="-100" max="100" step="1" value="0"/></div>
 
                     <div>
                         <label for="vibrance">Vibrance</label>
                         <input id="vibrance" name="vibrance" type="range" min="-100" max="100" value="0"/>
                     </div>
+                    <script>
+                        
+                    </script>
 
 
                     <div>
