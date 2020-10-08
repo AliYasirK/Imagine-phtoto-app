@@ -3,7 +3,6 @@ import './filter.css';
 import React, { Component } from 'react';
 //import { Stage, Layer, Rect, Text } from 'react-konva';
 //import Konva from 'konva';
-import axios from 'axios'
 
 class Filter extends React.Component {
   constructor(props){
@@ -32,7 +31,7 @@ class Filter extends React.Component {
 
                 <div>
                     <input type="file" onChange={this.handleChange}/>
-                    <img src={this.state.file}/>
+                    <img src={this.state.file} alt="upload image"/>
                  </div>
 
 
